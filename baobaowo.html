@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抱抱窝</title>
+  <link rel="icon" type="image/png" href="/img/logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body class="min-h-screen">
+  <!-- 固定导航 -->
+<nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <span class="text-xl font-bold gradient-text">Yi's Project</span>
+      </div>
+
+      <!-- 桌面端联系我 -->
+      <div class="hidden md:flex items-center space-x-4">
+        <span class="text-gray-700">联系我</span>
+
+        <!-- 邮件图标 -->
+        <button onclick="copyEmail()" class="text-gray-700 hover:text-red-500 transition" title="复制邮箱">
+          <i class="fas fa-envelope text-xl"></i>
+        </button>
+
+      <!-- 移动端菜单按钮（保留，但不再需要菜单内容） -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 hover:text-red-500">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+  <div class="flex flex-col space-y-4">
+    <a href="#hero" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white"  data-section="hero"></a>
+    <a href="#project" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white" title="项目概述" data-section="project"></a>
+    <a href="#background" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white" title="调研与洞察" data-section="background"></a>
+    <a href="#product" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white" title="产品定位" data-section="product"></a>
+    <a href="#features" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white" title="核心功能" data-section="features"></a>
+    <a href="#design" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white" title="设计展示" data-section="design"></a>
+    <a href="#business" class="nav-dot w-3 h-3 rounded-full border-2 border-red-500 bg-white" title="更多思考" data-section="business"></a>
+  </div>
+</div>
+
+
+  <!-- 主页英雄区 -->
+  <section id="hero" class="section-container min-h-screen flex items-center pt-16 pb-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+  
+        <!-- 左侧：文字介绍 (宽度1/3) -->
+        <div class="md:w-1/3 fade-up fade-up-1">
+          <div class="mb-6 inline-block">
+            <span class="bg-red-100 text-red-600 text-sm font-medium px-3 py-1 rounded-full">AI项目作品集</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            
+            <span class="gradient-text">抱抱窝</span><br></h1>
+            <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-[1.7]">
+              <span class="text-gray-900">助力 <span class="emphasis">亲密关系深度互动</span> 的 <span class="underline-wavy">AI 平台</span></span>
+            </h3>
+            
+          <p class="text-xl text-gray-600 mb-8 max-w-xl">
+            创造情侣专属的智能互动空间，用AI赋能亲密关系沟通
+          </p>
+        </div>
+      
+        <!-- 右侧：应用界面图片 (宽度2/3) -->
+        <div class="md:w-2/3 mt-10 md:mt-0 fade-up fade-up-2">
+          <div class="relative w-full mx-auto max-w-sm md:max-w-md lg:max-w-lg">
+            <div class="absolute -top-10 -left-10 w-32 h-32 bg-red-100 rounded-full filter blur-xl opacity-70"></div>
+            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-100 rounded-full filter blur-xl opacity-70"></div>
+            <div class="rounded-2xl bg-gradient-to-br from-red-500 to-orange-400 p-1 shadow-xl">
+              <div class="rounded-xl bg-white p-4">
+                <div class="flex justify-between items-center mb-4">
+                  <div class="flex space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                </div>
+                <div class="aspect-[9/16] bg-gray-100 rounded-lg flex items-center justify-center">
+                  <img src="/img/starter.png" alt="抱抱窝应用界面" class="rounded-lg"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- 项目概述部分 -->
+  <section id="project" class="section-container py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">产品迭代与贡献</h2>
+        <p class="text-gray-600">作为产品&UI设计实习生，我在3个月中负责了从用户需求研究到产品原型设计的完整迭代过程</p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto relative">
+        <div class="absolute left-7 top-0 bottom-0 w-1 bg-gray-200 hidden md:block"></div>
+        
+      <!-- 阶段1 -->
+      <div class="relative mb-16 md:ml-8 fade-up fade-up-1">
+        <div class="timeline-dot relative md:ml-8">
+          <!-- 改为 flex 布局 -->
+          <div class="flex flex-col md:flex-row gap-6 timeline-line relative bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-500">
+            
+            <!-- 左侧：文字内容区域 -->
+            <div class="md:w-3/5">
+              <span class="inline-block bg-red-100 text-red-600 text-sm font-medium px-3 py-1 rounded-full mb-3">阶段一：初始版本</span>
+              <h3 class="text-xl font-bold mb-3">产品定位：<span class="emphasis">AI辅助的聊天与笔记工具</span></h3>
+      
+              <div class="text-gray-700 space-y-2">
+                <p><strong>核心功能：</strong></p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><span class="emphasis">AI基础聊天功能</span>（天气查询、旅游信息）</li>
+                  <li>支持文字、图片、视频的多媒体笔记</li>
+                </ul>
+              </div>
+      
+              <div class="text-gray-700 space-y-2 mt-4">
+                <p><strong>我的贡献：</strong></p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>设计 AI一对一对话的交互流程，定义初步的互动逻辑</li>
+                  <li><span class="emphasis">绘制初版UI界面</span> 并完成低保真原型测试</li>
+                </ul>
+              </div>
+      
+              
+            </div>
+      
+            <!-- 右侧：居中图片 -->
+            <div class="md:w-2/5 flex items-center justify-center">
+              <img
+                src="/img/stage1.png"
+                alt="阶段一原型图"
+                class="h-64 w-auto rounded shadow-sm cursor-zoom-in hover:opacity-80 transition"
+                onclick="showOverlay('/img/stage1.png')"
+              />
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+
+<!-- 阶段2 -->
+<div class="relative mb-16 md:ml-8 fade-up fade-up-2">
+  <div class="timeline-dot relative md:ml-8">
+    <div class="flex flex-col md:flex-row gap-6 timeline-line relative bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500">
+      
+      <!-- 左侧文字 -->
+      <div class="md:w-3/5">
+        <span class="inline-block bg-orange-100 text-orange-600 text-sm font-medium px-3 py-1 rounded-full mb-3">阶段二：中期调整</span>
+        <h3 class="text-xl font-bold mb-3">产品定位：<span class="emphasis">趣味化情侣互动工具</span></h3>
+
+        <div class="text-gray-700 space-y-2">
+          <p><strong>核心功能：</strong></p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><span class="emphasis">拟人化的AI角色</span>（陪伴型、娱乐型、知识型）</li>
+            <li>情侣趣味小游戏（默契问答、拍照互动等）</li>
+          </ul>
+        </div>
+
+        <div class="text-gray-700 space-y-2 mt-4">
+          <p><strong>我的贡献：</strong></p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>提出<span class="emphasis">“情感拟人AI”</span>概念并参与角色性格与功能设定</li>
+            <li>使用AIGC工具设计多款AI角色形象与互动动画</li>
+            <li>设计趣味互动游戏的交互逻辑与UI界面</li>
+          </ul>
+        </div>
+
+    
+      </div>
+
+      <!-- 右侧图片 -->
+      <div class="md:w-2/5 flex items-center justify-center">
+        <img
+          src="/img/stage2.png"
+          alt="阶段二原型图"
+          class="h-64 w-auto rounded shadow-sm cursor-zoom-in hover:opacity-80 transition"
+          onclick="showOverlay('/img/stage2.png')"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 阶段3 -->
+<div class="relative mb-16 md:ml-8 fade-up fade-up-3">
+  <div class="timeline-dot relative md:ml-8">
+    <div class="flex flex-col md:flex-row gap-6 timeline-line relative bg-white rounded-xl shadow-lg p-6 border-l-4 border-pink-500">
+      
+      <!-- 左侧文字 -->
+      <div class="md:w-3/5">
+        <span class="inline-block bg-pink-100 text-pink-600 text-sm font-medium px-3 py-1 rounded-full mb-3">阶段三：最终版本</span>
+        <h3 class="text-xl font-bold mb-3">产品定位：<span class="emphasis">综合性情感管理平台</span></h3>
+
+        <div class="text-gray-700 space-y-2">
+          <p><strong>核心功能：</strong></p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><span class="emphasis">情绪状态互动</span></li>
+            <li>AI情感支持与互动建议</li>
+            <li>情感记录与数据可视化</li>
+          </ul>
+        </div>
+
+        <div class="text-gray-700 space-y-2 mt-4">
+          <p><strong>我的贡献：</strong></p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><span class="emphasis">主导用户调研</span>，包括问卷、访谈和需求共创工作坊</li>
+            <li>基于调研重新梳理整体信息架构和核心功能</li>
+            <li>设计完整高保真原型，涵盖三大功能模块</li>
+            <li>撰写情感辅助AI的具体使用场景范例与对话范式</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- 右侧图片 -->
+      <div class="md:w-2/5 flex items-center justify-center">
+        <img
+          src="/img/stage3.png"
+          alt="阶段三原型图"
+          class="h-auto w-auto rounded shadow-sm cursor-zoom-in hover:opacity-80 transition"
+          onclick="showOverlay('/img/stage3.png')"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目背景部分 -->
+  <section id="background" class="section-container py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">为什么选择情侣互动市场？</h2>
+        <p class="text-gray-600">线上社交普遍，真实情感连接缺失</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- 市场现状 -->
+        <div class="card bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-1">
+          <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-chart-line text-2xl text-red-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">社交碎片化趋势</h3>
+          <p class="text-gray-700 mb-6">
+            当今社交媒体碎片化严重，年轻用户虽然接触信息量大，但真实深度的情感连接却在减少。他们渴望在快节奏生活中，找到一种更有深度、更有意义的情感互动方式。
+          </p>
+          <div class="bg-gray-50 rounded-lg p-5">
+            <div class="flex items-center space-x-3 mb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <span class="font-medium">关键洞察</span>
+            </div>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+              <li>社交碎片化，年轻用户渴望深层次情感互动</li>
+              <li>婚恋关系线上化趋势明显，情感需求持续增长</li>
+            </ul>
+          </div>
+          <div class="mt-4 space-y-1 text-sm italic text-gray-400">
+            <p>
+              引自：
+              <a href="https://mp.weixin.qq.com/s/uIJfxEYJNdD9we3hkSV5cg" target="_blank" class="hover:text-gray-600 underline underline-offset-2">
+                《2024年社交趋势洞察报告》
+              </a>
+            </p>
+            <p>
+              引自：
+              <a href="https://mp.weixin.qq.com/s/eG9rIzLvrTiOcm3wpBfkrg" target="_blank" class="hover:text-gray-600 underline underline-offset-2">
+                《2024年青年婚恋观念及趋势调查报告》
+              </a>
+            </p>
+          </div>
+          
+        </div>
+        
+        <!-- 市场同质问题 -->
+        <div class="card bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-2">
+          <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-search text-2xl text-orange-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">市场同质严重，缺乏差异化</h3>
+          <p class="text-gray-700 mb-6">
+            现有情侣互动类应用同质化严重，大多功能臃肿复杂，用户学习成本高。市场亟需一款轻量化、聚焦情感互动的产品，填补细分市场空白。
+          </p>
+          <div class="bg-gray-50 rounded-lg p-5">
+            <div class="flex items-center space-x-3 mb-3">
+              <div class="w-3 h-3 rounded-full bg-orange-500"></div>
+              <span class="font-medium">核心发现</span>
+            </div>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2">
+              <li>现有App功能臃肿复杂，用户学习成本高</li>
+              <li>用户付费意愿明显，商业机会突出</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex justify-start gap-x-4">
+            <!-- 图1 -->
+            <div
+  class="relative w-40 h-16 cursor-zoom-in overflow-hidden rounded shadow-sm"
+  onclick="showOverlay('/img/appCompare1.jpg')"
+>
+  <img
+    src="/img/appCompare1.jpg"
+    alt="直接竞品对比图"
+    class="w-full h-full object-cover"
+  />
+              <!-- 蒙层 -->
+              <div class="absolute inset-0 bg-gray-200/60 rounded flex items-center justify-center">
+                <p class="text-black text-xs font-medium">直接竞品对比</p>
+              </div>
+            </div>
+          
+            <!-- 图2 -->
+            <div class="relative w-40 h-16 cursor-zoom-in overflow-hidden rounded shadow-sm" onclick="showOverlay('/img/appCompare2.jpg')">
+              <img
+                src="/img/appCompare2.jpg"
+                alt="间接竞品对比图"
+                class="w-full h-full rounded shadow-sm"
+              />
+              <div class="absolute inset-0 bg-gray-200/60 rounded flex items-center justify-center">
+                <p class="text-black text-xs font-medium">间接竞品对比</p>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+        
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户需求部分 -->
+  <section id="user" class="section-container py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">目标用户究竟需要什么？</h2>
+        <p class="text-gray-600">基于274份问卷与15次深度访谈的洞察</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 mb-16">
+        <!-- 用户画像1 -->
+        <div class="card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 fade-up fade-up-1">
+          <div class="h-2 bg-gradient-to-r from-red-500 to-orange-500"></div>
+          <div class="p-6">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <i class="fas fa-user-circle text-2xl text-red-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-center mb-3">核心用户群体</h3>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-birthday-cake text-red-500"></i>
+                </div>
+                <span class="text-gray-700">18-26岁年轻情侣</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-comments text-red-500"></i>
+                </div>
+                <span class="text-gray-700">高频沟通需求</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-mobile-alt text-red-500"></i>
+                </div>
+                <span class="text-gray-700">高度依赖手机社交</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 用户画像2 -->
+        <div class="card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 fade-up fade-up-2">
+          <div class="h-2 bg-gradient-to-r from-orange-500 to-pink-500"></div>
+          <div class="p-6">
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <i class="fas fa-user-friends text-2xl text-orange-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-center mb-3">潜在用户群体</h3>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-clock text-orange-500"></i>
+                </div>
+                <span class="text-gray-700">沟通低频情侣</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-heart-broken text-orange-500"></i>
+                </div>
+                <span class="text-gray-700">情感联系渐淡</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-search-plus text-orange-500"></i>
+                </div>
+                <span class="text-gray-700">期望增强情感连接</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 用户需求优先级 -->
+        <div class="card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 fade-up fade-up-3">
+          <div class="h-2 bg-gradient-to-r from-pink-500 to-purple-500"></div>
+          <div class="p-6">
+            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+              <i class="fas fa-list-ol text-2xl text-pink-500"></i>
+            </div>
+            <h3 class="text-lg font-bold text-center mb-3">需求优先级</h3>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-pink-500 font-bold text-sm">1</span>
+                </div>
+                <span class="text-gray-700">趣味情感互动</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-pink-500 font-bold text-sm">2</span>
+                </div>
+                <span class="text-gray-700">情感记录与共享</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-pink-500 font-bold text-sm">3</span>
+                </div>
+                <span class="text-gray-700">情感沟通辅助</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- 用户痛点与设计机会 -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-4">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 md:pr-8 md:border-r border-gray-200">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-exclamation-circle text-red-500"></i>
+              </div>
+              <h3 class="text-xl font-bold">用户痛点</h3>
+            </div>
+            <ul class="list-disc pl-5 text-gray-700 space-y-3">
+              <li>现有工具缺乏个性化趣味互动形式</li>
+              <li>情感表达工具单一且不足够深入</li>
+              <li>情感记录过程繁琐，缺乏仪式感</li>
+              <li>长期关系中互动频次降低，新鲜感不足</li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 md:pl-8 mt-8 md:mt-0">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-lightbulb text-green-500"></i>
+              </div>
+              <h3 class="text-xl font-bold">设计机会</h3>
+            </div>
+            <ul class="list-disc pl-5 text-gray-700 space-y-3">
+              <li>构建专属感强、趣味性高、使用门槛低的互动空间</li>
+              <li>用AI创新互动模式，强化情感连接体验</li>
+              <li>设计轻量化且有仪式感的情感记录功能</li>
+              <li>通过个性化AI交互提供关系维护建议</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品定位部分 -->
+  <section id="product" class="section-container py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">抱抱窝如何与众不同？</h2>
+        <p class="text-gray-600">轻量化 | 情感化 | 智能化 | 趣味性</p>
+      </div>
+      
+      <!-- 差异化价值卡片 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+        <div class="card bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-1">
+          <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-heart text-2xl text-red-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">情侣深度情感互动平台</h3>
+          <p class="text-gray-700">
+            与泛用社交软件不同，抱抱窝专注于为情侣用户创造专属、深入、智能且有趣的互动空间。
+          </p>
+        </div>
+        
+        <div class="card bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-2">
+          <div class="w-14 h-14 bg-pink-100 rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-robot text-2xl text-pink-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">AI智能拟人互动体验</h3>
+          <p class="text-gray-700">
+            通过AI技术创造智能化拟人角色，为情侣提供情感支持、互动创意和关系建议，让情感体验更深入、更有趣。
+          </p>
+        </div>
+      </div>
+      
+      <!-- 定位关键词 -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-3">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-feather text-red-500 text-xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">轻量化</h4>
+            <p class="text-gray-600 text-sm">简洁界面，低学习成本</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto bg-orange-100 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-heart text-orange-500 text-xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">情感化</h4>
+            <p class="text-gray-600 text-sm">深度情感连接体验</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-brain text-pink-500 text-xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">智能化</h4>
+            <p class="text-gray-600 text-sm">AI赋能情感互动质量</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-smile-beam text-purple-500 text-xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">趣味性</h4>
+            <p class="text-gray-600 text-sm">有趣的互动体验设计</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心功能模块部分 -->
+  <section id="features" class="section-container py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">核心功能模块</h2>
+        <p class="text-gray-600">为情侣打造的三大专属体验</p>
+      </div>
+  
+      <!-- 三个功能卡片并排 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- 🌟 功能一 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+          <!-- 上：文字 -->
+          <div class="bg-gradient-to-br from-red-500 to-orange-400 text-white p-6">
+            <span class="inline-block bg-white/20 text-sm font-medium px-3 py-1 rounded-full mb-4">核心功能一</span>
+            <h3 class="text-xl font-bold mb-3">专属情绪互动，实时同步</h3>
+            <ul class="space-y-2 text-white/90 text-sm">
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>一键分享情绪状态</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>实时同步伴侣情绪</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>AI情感支持建议</span>
+              </li>
+            </ul>
+          </div>
+          <!-- 下：图 -->
+          <div class="bg-gray-100 p-4 flex items-center justify-center">
+            <img src="/img/ui_status.png" alt="情绪状态界面" class="rounded-lg max-h-[360px] w-auto" />
+          </div>
+        </div>
+  
+        <!-- 🌟 功能二 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+          <div class="bg-gradient-to-br from-pink-500 to-purple-400 text-white p-6">
+            <span class="inline-block bg-white/20 text-sm font-medium px-3 py-1 rounded-full mb-4">核心功能二</span>
+            <h3 class="text-xl font-bold mb-3">AI情感角色助力沟通</h3>
+            <ul class="space-y-2 text-white/90 text-sm">
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>个性化AI情感助手</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>AI媒介情感互动</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>趣味互动小游戏</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-gray-100 p-4 flex items-center justify-center">
+            <img src="/img/ui_chat.png" alt="AI角色互动界面" class="rounded-lg max-h-[360px] w-auto" />
+          </div>
+        </div>
+  
+        <!-- 🌟 功能三 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+          <div class="bg-gradient-to-br from-purple-500 to-blue-400 text-white p-6">
+            <span class="inline-block bg-white/20 text-sm font-medium px-3 py-1 rounded-full mb-4">核心功能三</span>
+            <h3 class="text-xl font-bold mb-3">打造专属记忆与仪式感</h3>
+            <ul class="space-y-2 text-white/90 text-sm">
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>智能记忆可视化</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>纪念日智能提醒</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fas fa-check-circle"></i>
+                <span>情感时间轴展示</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-gray-100 p-4 flex items-center justify-center">
+            <img src="/img/ui_space.png" alt="记忆空间界面" class="rounded-lg max-h-[360px] w-auto" />
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- UI视觉设计部分 -->
+  <section id="design" class="section-container py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">情感导向的视觉设计</h2>
+        <p class="text-gray-600">通过视觉语言强化用户情感体验</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- 设计特点1 -->
+        <div class="card bg-white rounded-xl shadow-lg p-6 border border-gray-100 fade-up fade-up-1">
+          <div class="aspect-w-16 aspect-h-9 mb-6 bg-gradient-to-r from-red-500 to-orange-400 rounded-lg p-4 flex items-center justify-center">
+            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <i class="fas fa-palette text-white text-xl"></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold mb-2">暖色渐变色彩</h3>
+          <p class="text-gray-600">
+            精心选择的暖色渐变色系，增强情感共鸣与舒适感，为用户营造温暖亲密的互动氛围。
+          </p>
+        </div>
+        
+        <!-- 设计特点2 -->
+        <div class="card bg-white rounded-xl shadow-lg p-6 border border-gray-100 fade-up fade-up-2">
+          <div class="aspect-w-16 aspect-h-9 mb-6 bg-gradient-to-r from-orange-400 to-pink-500 rounded-lg p-4 flex items-center justify-center">
+            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <i class="fas fa-layer-group text-white text-xl"></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold mb-2">简洁直观界面</h3>
+          <p class="text-gray-600">
+            简洁、直观的交互界面设计，降低使用门槛，让用户专注于情感互动而非学习使用方法。
+          </p>
+        </div>
+        
+        <!-- 设计特点3 -->
+        <div class="card bg-white rounded-xl shadow-lg p-6 border border-gray-100 fade-up fade-up-3">
+          <div class="aspect-w-16 aspect-h-9 mb-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg p-4 flex items-center justify-center">
+            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <i class="fas fa-magic text-white text-xl"></i>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold mb-2">情感化微交互</h3>
+          <p class="text-gray-600">
+            精心设计的情感化微交互细节，在关键互动点强化情感反馈，提升整体用户体验。
+          </p>
+        </div>
+      </div>
+      
+      <!-- 设计展示大图 -->
+      <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 overflow-hidden fade-up">
+        <div class="bg-gray-100 rounded-lg p-6 flex items-center justify-center">
+          <div class="w-full aspect-[4/3] bg-white rounded-lg shadow-sm flex items-center justify-center">
+            <img src="/img/design.png" alt="UI设计展示图" class="w-full h-full object-contain rounded-lg" />
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </section>
+
+  
+  <!-- 项目成果与思考 -->
+  <section id="business" class="section-container py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">成果与更多思考</h2>
+        <p class="text-gray-600">阶段性成果与未来优化方向</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+        <!-- 阶段性成果 -->
+        <div class="card bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-1">
+          <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-check-circle text-2xl text-green-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">阶段性成果</h3>
+          <ul class="list-disc pl-5 text-gray-700 space-y-3">
+            <li>完成从用户需求洞察到产品定位的全流程</li>
+            <li>高保真原型获得用户认可，验证核心假设</li>
+            <li>明确产品差异化定位与市场价值</li>
+            <li>受技术与团队战略调整影响，未能实际落地</li>
+          </ul>
+        </div>
+        
+                <!-- 更多思考 -->
+                <div class="card bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up fade-up-2">
+                  <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-brain text-2xl text-blue-500"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-4">探索方向</h3>
+                  <ul class="list-disc pl-5 text-gray-700 space-y-3">
+                    <li>提升AI精准识别情绪与细致化互动响应的能力</li>
+                    <li>设计鼓励情侣“共同成长”的长期激励机制</li>
+                    <li>AI无痕融入日常互动，增强自然的互动体验</li>
+                    <li>长期个性化AI陪伴，根据情侣习惯动态优化互动策略</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+    <!-- 运营与商业模式部分 -->
+  <section class="section-container py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16 fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">运营与商业模式</h2>
+        <p class="text-gray-600">持续增长的用户生态与清晰的盈利路径</p>
+      </div>
+      
+      <!-- 运营策略 -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 mb-16 fade-up">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+            <i class="fas fa-bullhorn text-red-500"></i>
+          </div>
+          用户增长与留存运营策略
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- 拉新策略 -->
+          <div class="rounded-xl bg-gray-50 p-6">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                <i class="fas fa-user-plus text-red-500"></i>
+              </div>
+              <h4 class="font-bold">拉新策略</h4>
+            </div>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-red-500 mt-1 flex-shrink-0"></i>
+                <span>邀请激励机制</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-red-500 mt-1 flex-shrink-0"></i>
+                <span>情侣安利活动</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-red-500 mt-1 flex-shrink-0"></i>
+                <span>自媒体KOL合作</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-red-500 mt-1 flex-shrink-0"></i>
+                <span>精准广告投放</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- 促活策略 -->
+          <div class="rounded-xl bg-gray-50 p-6">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                <i class="fas fa-fire text-orange-500"></i>
+              </div>
+              <h4 class="font-bold">促活策略</h4>
+            </div>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                <span>日常打卡机制</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                <span>节日特别活动</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                <span>情侣趣味测试H5</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                <span>互动模板更新</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- 增加粘性 -->
+          <div class="rounded-xl bg-gray-50 p-6">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                <i class="fas fa-heart text-pink-500"></i>
+              </div>
+              <h4 class="font-bold">增加粘性</h4>
+            </div>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-pink-500 mt-1 flex-shrink-0"></i>
+                <span>节日与纪念日内容推送</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-pink-500 mt-1 flex-shrink-0"></i>
+                <span>互动数据周报与月报</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-pink-500 mt-1 flex-shrink-0"></i>
+                <span>AI主动互动提醒</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-pink-500 mt-1 flex-shrink-0"></i>
+                <span>长期关系成长系统</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 商业模式 -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 fade-up">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+            <i class="fas fa-coins text-green-500"></i>
+          </div>
+          商业模式规划
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col space-y-6">
+            <!-- 盈利渠道1 -->
+            <div class="flex space-x-4">
+              <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-crown text-red-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">会员订阅制</h4>
+                <p class="text-gray-600 text-sm">
+                  提供空间扩容、高级装扮等专属功能，为用户创造差异化价值。
+                </p>
+              </div>
+            </div>
+            
+            <!-- 盈利渠道2 -->
+            <div class="flex space-x-4">
+              <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-gift text-orange-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">情侣主题周边商品</h4>
+                <p class="text-gray-600 text-sm">
+                  基于平台IP开发情侣主题实体周边产品，满足用户线下情感表达需求。
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex flex-col space-y-6">
+            <!-- 盈利渠道3 -->
+            <div class="flex space-x-4">
+              <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-shopping-bag text-pink-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">精选情侣相关商品推广</h4>
+                <p class="text-gray-600 text-sm">
+                  为用户筛选优质情侣相关商品，提供有价值的购物推荐服务。
+                </p>
+              </div>
+            </div>
+            
+            <!-- 盈利渠道4 -->
+            <div class="flex space-x-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-ad text-purple-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">精准广告投放</h4>
+                <p class="text-gray-600 text-sm">
+                  用户体验友好的精准广告投放，确保内容相关性与用户接受度。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        
+          <!-- 页脚 -->
+          <footer class="bg-gray-100 py-8">
+            <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
+              © 2025 Baobaowo | Webpage Designed by Claude & Lishuyi
+            </div>
+          </footer>
+
+<!-- 全屏大图浮层 -->
+<div
+  id="image-overlay"
+  class="fixed inset-0 bg-black/70 z-[9999] hidden flex items-center justify-center"
+  onclick="this.classList.add('hidden')"
+>
+  <img
+    id="overlay-image"
+    src=""
+    alt="放大预览图"
+    class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
+  />
+</div>
+
+
+        
+<script src="/main.js"></script>
+ 
+        </body>
+        </html>
+        
