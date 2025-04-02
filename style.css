@@ -112,10 +112,10 @@ line-height: 1; /* 关键：跟字体一样高 */
 .underline-wavy {
 text-decoration-line: underline;
 text-decoration-style: wavy;
-text-decoration-color: #f97316; /* Tailwind 橙色 */
+text-decoration-color: #ffaa6d; /* Tailwind 橙色 */
 text-decoration-thickness: 2px;
-text-underline-offset: 4px; /* 让波浪线与文字分开一点 */
-font-weight: 600;
+text-underline-offset: 2px; /* 让波浪线与文字分开一点 */
+
 }
 
 .underline {
